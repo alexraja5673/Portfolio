@@ -1,0 +1,630 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,600;1,400&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+*::selection{
+    background: rgb(214, 101, 101);
+    color: rgb(96, 91, 91);
+}
+body{
+    background: #fff;
+}
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+html::-webkit-scrollbar-track{
+    background: rgb(122, 119, 119);
+    border-radius: .4rem;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: rgb(75, 216, 216);
+    border-radius: .4rem;
+}
+section{
+    min-height: 100vh;
+    padding: 1rem 5%;
+    background: #dbcebbe6;
+    border: 3px solid;
+    overflow: hidden;
+}
+
+.heading, .headingg, .headings{
+    font-size: 1.9rem;
+    font-weight: 900;
+    position: relative;
+}
+.heading span, .headingg span, .headings span{
+    color: #0208fd;
+}
+.heading::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background: rgb(194, 194, 49);
+    left: 0;
+    bottom: -5px;
+}
+.headingg::before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background: rgb(194, 194, 49);
+    left: 0;
+    bottom: -5px;
+}
+.headings::before{
+    content: '';
+    position: absolute;
+    width: 130px;
+    height: 4px;
+    background: rgb(194, 194, 49);
+    left: 0;
+    bottom: -5px;
+}
+
+
+
+/* ============== meadia query ================== */
+
+@media (min-width:320px){
+    #menu{
+        display: block;
+    }
+    header{
+        left: -100%;
+    }
+    header.show{
+        left: 0;
+    }
+   
+    header{
+        width: 100%;
+    }
+    body{
+        padding: 0;
+    }
+
+
+    .port-info{
+        bottom: -300px;
+    }
+
+}
+
+
+@media (min-width:576px){
+    header{
+        left: -330px;
+        width: 330px;
+    }
+    header.show{
+        left: 0;
+    }
+
+    .port-info{
+        bottom: -450px;
+    }
+    
+}
+
+@media (max-width:768px){
+
+    .timeline::after{
+        left: 11px;
+    }
+    .right{
+        left: 0;
+        transform: translateX(150%);
+    }
+    .list-qualify{
+        width: 100%;
+    }
+    .left-arrow{
+        left: -10px;
+        border-right: 10px solid #fff;
+    }
+    .list-qualify img{
+        left: -20px;
+    }
+}
+
+
+@media (min-width:768px){
+    .timeline::after{
+        left: 50%;
+    }
+    .right{
+        left: 50%;
+        transform: translateX(150%);
+    }
+    .list-qualify{
+        width: 50%;
+    }
+    .left-arrow{
+        right: -10px;
+        border-left: 10px solid #fff;
+    }
+    .list-qualify img{
+        right: -20px;
+    }
+}
+
+
+@media (min-width:992px){
+    
+    #menu{
+        display: none;
+    }
+    header{
+        left: 0;
+        width: 300px;
+    }
+    body{
+        padding-left: 300px;
+    }
+    .h-para{
+        max-width: 75%;
+        margin: auto;
+    }
+
+    .port-info{
+        bottom: -300px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --------------- navbar start ------------- */
+
+header{
+    position: fixed;
+    top: 0;  bottom: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #dbcebbe6;
+    text-align: center;
+}
+header .profile{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+header .profile img{
+    width: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: .1rem solid #aaeeff;
+}
+
+header .social-icons a{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    text-align: center;
+    line-height: 37px;
+    background: #444;
+    color: #fff;
+    font-size: 18px;
+    transition: .4s;
+    margin: 1.5px;
+    text-decoration: none;
+}
+header .social-icons .fb:hover{
+    background: rgb(88 93 148);
+}
+header .social-icons .ins:hover{
+    background: rgb(207 61 115 / 95%);
+}
+header .social-icons .lin:hover{
+    background: rgb(6 12 205 / 94%);
+}
+header .social-icons .twi:hover{
+    background: rgb(78 159 151 / 94%);
+}
+
+header .navbar{
+    display: block;
+    width: 100%;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+header .navbar .navs{
+    list-style-type: none;
+    padding: 10px;
+}
+header .navbar .navs li a{
+    display: block;
+    padding: 4px;
+    margin: 11px 0;
+    background: #333;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 3rem;
+    transition: all .2s linear;
+    text-decoration: none;
+}
+header .navbar .navs li a:hover{
+    background: rgb(194, 194, 49);
+}
+header .navbar .navs li a.active{
+    background: rgb(194, 194, 49);
+}
+.nav-footer p{
+    font-size: 14px;
+}
+
+#menu{
+    position: fixed;
+    top: 10px; right: 10px;
+    padding: 11px 16px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+/* =========== navbar end ================= */
+
+
+
+/* ---------------- home section start ---------------- */
+
+#home p{
+    font-size: 1.8rem;
+    color: #060606;
+}
+.home-content .greet{
+    font-size: 1.8rem;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+.mine{
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+.mine span{
+    font-size: 2.5rem;
+    color: #fff;
+    background: rgb(194, 194, 49);
+    padding-left: 4px;
+    
+}
+.who{
+    font-weight: 600;
+}
+.who span{
+    background: rgb(194, 194, 49);
+    padding: 3px 4px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+
+
+
+/* ============ home section end ================= */
+
+
+
+/* ---------- about me start ----------------- */
+.abt-content h3{
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+.abt-list p{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.abt-list p span{
+    color: #bd2828;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+.abt-my p{
+    font-size: 1.5rem;
+}
+/* ============== about me end =============== */
+
+
+
+
+
+
+/* ---------------- skill section start -------------- */
+.skill-card{
+    padding: 7px 8px;
+    background: #fff;
+}
+.progres{
+    width: 100%;
+    height: 16px;
+    background: gray;
+    border-radius: 10px;
+}
+.progres-bar{
+    opacity: 0;
+    border-radius: 10px;
+    height: inherit;
+    background-color: #9da9ff;
+    position: relative;
+    transition: all .5s linear;
+}
+.progres-bar span{
+    position: absolute;
+    top: -4px;
+    right: 0;
+    font-size: 11px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    line-height: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background: black;
+}
+
+
+/* ==================== skill section end =============== */
+
+
+
+
+
+
+
+/* ------------------ qualification section --------------------------- */
+.timeline{
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+.list-qualify{
+    padding: 10px 35px;
+    position: relative;
+    transition: all .3s ease;
+}
+.left{
+    left: 0;
+    transform: translateX(-150%);
+}
+
+.list-qualify.show{
+    transform: translateX(0);
+}
+.list-qualify img{
+    position: absolute;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    top: 32px;
+    z-index: 10;
+}
+.show img{
+    z-index: 999;
+}
+.right img{
+    left: -20px;
+}
+.timeline::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+    margin-left: -3px;
+    animation: moveline 6s linear forwards;
+}
+.left-arrow{
+    position: absolute;
+    width: 0; height: 0;
+    top: 30px; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    /* border-left: 10px solid #fff; */
+    z-index: 1;
+}
+.right-arrow{
+    position: absolute;
+    width: 0; height: 0;
+    top: 30px; left: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #fff;
+    z-index: 1;
+}
+.list-qualify .card > span{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgb(237, 45, 45);
+}
+.list-qualify .card h3{
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+.list-qualify .card p{
+    font-size: 1.6rem;
+    font-weight: 700;   
+    color: #444;
+}
+
+.institute{
+    font-size: 25px;
+    text-decoration: none;
+}
+
+/* ================= qualification section end =================== */
+
+
+
+
+
+
+
+
+/* ---------------- project section start ---------------- */
+.item img{
+	width:100%;
+	transition:all ease-in-out 0.3s;
+}
+.item{
+	overflow:hidden;
+	position:relative;
+}
+.port-info{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+	border-radius:3px ;
+    background-color: #4c4d4ca6;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    transition: all .3s linear;
+	
+}
+.port-info h2{
+	font-size: 19px;
+    color: #fff;
+    font-weight: 700;
+	margin-bottom: 0.4rem;
+    text-align: center;
+}
+.htm,.css,.js,.react,.bs{
+	font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+	margin-bottom: 0.4rem;
+}
+
+.item:hover .port-info{
+	bottom: 0;
+}
+
+.port-navi a{
+    text-decoration: none;
+    padding: 4px 8px;
+    background: #0351ffeb;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 4px;
+    font-size: 15px;
+    color: #fff;
+    transition: all .3s linear;
+}
+.port-navi a:hover{
+    background: #0c4cdbb5;
+    color: #fff;
+}
+
+/* =============== project section end ====================== */
+
+
+
+
+
+
+/* --------------------- contact section start ------------------- */
+.cols{
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1); 
+    border-radius: 5px;
+}
+.cols i{
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.7rem;
+    background: #35b87b;
+    color: #fff;
+    border-radius: 50%;
+}
+.cols h3{
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+.cols a{
+    text-decoration: none;
+    margin-bottom: 0.2rem !important;
+    font-size: 1.4rem;
+    color: #2a2727f0;
+}
+.cols p{
+    margin-bottom: 0.2rem !important;
+    font-size: 1.4rem;
+    color: #2a2727f0;
+}
+
+.info{
+    background: #fff;
+    border-radius: .4rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+.info div .box, .info div .boxs{
+    border-bottom: .1rem solid #333;
+    color: #333;
+    font-size: 1.5rem;
+    padding: 10px 0;
+    margin: 7px 0;
+}
+.info div .box:focus{
+    border: 1px solid #aaeeff;
+}
+.info div .boxs:focus{
+    border: 1px solid #aaeeff;
+}
+.map{
+    border: 1px solid #fff;
+    border-radius: .4rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    background: #fff;
+    padding: 8px;
+}
+.pics{
+    border-radius: 1rem;
+}
+.btns{
+    padding: 5px 9px;
+    background: #0c4cdbb5;
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all .3s linear;
+}
+.btns:hover{
+    background: #0351ffeb;
+}
+
+/* ========================= contact section end ============================= */
